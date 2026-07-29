@@ -1,0 +1,25 @@
+# Mirrors build-images.yml, scoped to the coralogix branch and this fork's registry.
+name: Build coralogix images
+
+on:
+  push:
+    branches:
+      - coralogix
+    paths:
+      - 'src/**'
+      - 'test/**'
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  build_images:
+    permissions:
+      contents: read
+      packages: write
+    uses: ./.github/workflows/coralogix-component-build-images.yml
+    with:
+      push: true
+      version: ${{ github.sha }}
+    secrets: inherit

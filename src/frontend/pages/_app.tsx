@@ -9,6 +9,7 @@ import CartProvider from '../providers/Cart.provider';
 import { ThemeProvider } from 'styled-components';
 import Theme from '../styles/Theme';
 import FrontendTracer from '../utils/telemetry/FrontendTracer';
+import InitCoralogixRum from '../utils/telemetry/CoralogixRum';
 import SessionGateway from '../gateways/Session.gateway';
 import { OpenFeatureProvider, OpenFeature } from '@openfeature/react-sdk';
 import { FlagdWebProvider } from '@openfeature/flagd-web-provider';
@@ -20,6 +21,10 @@ declare global {
       NEXT_PUBLIC_OTEL_SERVICE_NAME?: string;
       NEXT_PUBLIC_OTEL_EXPORTER_OTLP_TRACES_ENDPOINT?: string;
       IS_SYNTHETIC_REQUEST?: string;
+      NEXT_PUBLIC_CORALOGIX_RUM_PUBLIC_KEY?: string;
+      NEXT_PUBLIC_CORALOGIX_RUM_APPLICATION_NAME?: string;
+      NEXT_PUBLIC_CORALOGIX_RUM_APPLICATION_VERSION?: string;
+      NEXT_PUBLIC_CORALOGIX_RUM_DOMAIN?: string;
     };
   }
 }
@@ -28,6 +33,7 @@ if (typeof window !== 'undefined') {
   FrontendTracer();
   if (window.location) {
     const session = SessionGateway.getSession();
+    InitCoralogixRum(session);
 
     // Set context prior to provider init to avoid multiple http calls
     OpenFeature.setContext({ targetingKey: session.userId, ...session }).then(() => {

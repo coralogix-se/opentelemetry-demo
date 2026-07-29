@@ -301,6 +301,10 @@ services:
       - OTEL_COLLECTOR_HOST
       - FLAGD_HOST
       - FLAGD_PORT
+      - CORALOGIX_RUM_PUBLIC_KEY
+      - CORALOGIX_RUM_APPLICATION_NAME
+      - CORALOGIX_RUM_APPLICATION_VERSION
+      - CORALOGIX_RUM_DOMAIN
     depends_on:
       ad:
         condition: service_started

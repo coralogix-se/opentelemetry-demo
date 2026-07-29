@@ -3,7 +3,7 @@ name: Build and publish branch images
 on:
   push:
     branches:
-      - 2.2.0-cx
+      - coralogix
     paths:
       - 'src/**'
   workflow_dispatch: {}

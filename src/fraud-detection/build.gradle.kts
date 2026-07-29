@@ -48,7 +48,7 @@ dependencies {
     implementation("org.apache.logging.log4j:log4j-core:2.26.1")
     implementation("org.slf4j:slf4j-api:2.0.18")
     implementation("com.google.protobuf:protobuf-kotlin:${protobufVersion}")
-    implementation("dev.openfeature:sdk:1.21.0")
+    implementation("dev.openfeature:sdk:1.22.0")
     implementation("dev.openfeature.contrib.providers:flagd:0.14.0")
 
     if (JavaVersion.current().isJava9Compatible) {

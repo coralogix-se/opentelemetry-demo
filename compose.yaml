@@ -279,6 +279,10 @@ services:
       - OTEL_COLLECTOR_HOST
       - FLAGD_HOST
       - FLAGD_PORT
+      - CORALOGIX_RUM_PUBLIC_KEY
+      - CORALOGIX_RUM_APPLICATION_NAME
+      - CORALOGIX_RUM_APPLICATION_VERSION
+      - CORALOGIX_RUM_DOMAIN
     healthcheck:
       test: ["CMD", "/nodejs/bin/node", "-e", "require('net').connect(${FRONTEND_PORT},require('os').hostname(),function(){process.exit(0)}).on('error',function(){process.exit(1)})"]
       start_period: 60s

@@ -47,6 +47,7 @@ jobs:
 
     strategy:
       fail-fast: false
+      max-parallel: 8
       matrix:
         file_tag:
           - file: ./src/accounting/Dockerfile

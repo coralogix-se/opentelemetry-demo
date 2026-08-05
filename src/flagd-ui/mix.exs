@@ -45,7 +45,7 @@ defmodule FlagdUi.MixProject do
     [
       {:phoenix, "~> 1.8.9", override: true},
       {:phoenix_html, "~> 4.3.0"},
-      {:phoenix_live_reload, "~> 1.6.2", only: :dev},
+      {:phoenix_live_reload, "~> 1.7.0", only: :dev},
       {:phoenix_live_view, "~> 1.2.3"},
       {:floki, "~> 0.38.4", only: :test},
       {:lazy_html, "~> 0.1.9", only: :test},

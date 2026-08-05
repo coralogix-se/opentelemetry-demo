@@ -631,9 +631,9 @@ checksum = "1d674e81391d1e1ab681a28d99df07927c6d4aa5b027d7da16ba32d1d21ecd99"
 
 [[package]]
 name = "flagd-evaluation-engine"
-version = "0.0.3"
+version = "0.0.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "db7b9d4f158d55b7e3aa1379089b0bc7ccbb7956faa035d970ebaa02f3ee9c29"
+checksum = "521a247411f4d5cde7697fe01c41f698a188907fc84a997d599a5ed281398c27"
 dependencies = [
  "datalogic-rs",
  "murmurhash3",
@@ -988,7 +988,7 @@ dependencies = [
  "libc",
  "percent-encoding",
  "pin-project-lite",
- "socket2 0.5.10",
+ "socket2 0.6.4",
  "tokio",
  "tower-service",
  "tracing",
@@ -1423,9 +1423,9 @@ dependencies = [
 
 [[package]]
 name = "open-feature-flagd"
-version = "0.2.1"
+version = "0.2.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a1497031222df1b5cc68017ade6835d8ddcbc4d9ce26db69d03e073ec21f3192"
+checksum = "a04dbb3f16cb68b59fcb8f942b6113f958576add7d51d0822de8010da4c08e7a"
 dependencies = [
  "async-trait",
  "datalogic-rs",
@@ -1971,7 +1971,6 @@ checksum = "3c54fcab019b409d04215d3a17cb438fd7fbf192ee61461f20f4fe18704bc138"
 dependencies = [
  "log",
  "once_cell",
- "ring",
  "rustls-pki-types",
  "rustls-webpki",
  "subtle",
@@ -2249,7 +2248,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "32497e9a4c7b38532efcdebeef879707aa9f794296a4f0244f6f69e9bc8574bd"
 dependencies = [
  "fastrand",
- "getrandom 0.3.4",
+ "getrandom 0.4.3",
  "once_cell",
  "rustix",
  "windows-sys 0.61.2",
